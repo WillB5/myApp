@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action="/profile/"  id = "library" method="post">
+    {% csrf_token %}
+      <div id="libraryList">
+    {% for i in library %}
+    <img src= '{{ i.image.url }}'><br/>
+        <p>{{ i.desc }}</p><br/>
+    {% endfor %}
+
+{% endblock %}
