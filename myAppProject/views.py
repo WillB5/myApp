@@ -46,7 +46,9 @@ class makePost(CreateView):
 
 class Home(View):
     def get(self, request):
-        return render(request, "home.html", {})
+        Owner = request.session.get('username')
+        libraryList = list(Upload.objects.all())
+        return render(request, "home.html", {'library': libraryList})
 
 class Profile(View):
     def get(self, request):

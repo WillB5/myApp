@@ -4,4 +4,11 @@
 
     <h1>Home</h1>
 
+    {% csrf_token %}
+    <div id="libraryList">
+  {% for i in library %}
+  <img src= '{{ i.image.url }}' style="height: 300px;width: auto;"><br/>
+      <p>{{ i.desc }}</p><br/>
+  {% endfor %}
+
 {% endblock %}
